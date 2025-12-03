@@ -103,6 +103,25 @@ const Category = mongoose.model('Category', CategorySchema);
 const CartItem = mongoose.model('CartItem', CartItemSchema);
 const User = mongoose.model('User', UserSchema);
 
+app.get('/api/health', async (req, res) => {
+  try {
+    if (!isConnected) {
+      await connectDB();
+    }
+    res.json({ 
+      status: 'ok', 
+      mongo: isConnected ? 'connected' : 'disconnected',
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    res.status(500).json({ 
+      status: 'error', 
+      error: error.message,
+      mongo: isConnected ? 'connected' : 'disconnected'
+    });
+  }
+});
+
 const authenticateToken = (req, res, next) => {
   const authHeader = req.headers['authorization'];
   const token = authHeader && authHeader.split(' ')[1];
@@ -414,5 +433,13 @@ app.get('/api/auth/me', authenticateToken, async (req, res) => {
   }
 });
 
-module.exports = app;
+if (process.env.VERCEL) {
+  module.exports = app;
+} else {
+  const PORT = process.env.PORT || 3001;
+  app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
+  });
+  module.exports = app;
+}
 
