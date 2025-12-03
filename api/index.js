@@ -9,16 +9,33 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+let isConnected = false;
+
 const connectDB = async () => {
+  if (isConnected) {
+    return;
+  }
+
   try {
-    await mongoose.connect(process.env.MONGODB_URI);
+    await mongoose.connect(process.env.MONGODB_URI, {
+      serverSelectionTimeoutMS: 5000,
+      socketTimeoutMS: 45000,
+    });
+    isConnected = true;
     console.log('✅ Conectado ao MongoDB');
   } catch (err) {
     console.error('❌ Erro ao conectar ao MongoDB:', err.message);
+    isConnected = false;
   }
 };
 
-connectDB();
+mongoose.connection.on('disconnected', () => {
+  isConnected = false;
+});
+
+if (!isConnected) {
+  connectDB();
+}
 
 const ProductSchema = new mongoose.Schema({
   name: String,
@@ -103,6 +120,9 @@ const authenticateToken = (req, res, next) => {
 
 app.get('/api/products', async (req, res) => {
   try {
+    if (!isConnected) {
+      await connectDB();
+    }
     const { category, search } = req.query;
     let query = {};
     if (category) query.category = category;
@@ -126,6 +146,9 @@ app.get('/api/products/:id', async (req, res) => {
 
 app.get('/api/categories', async (req, res) => {
   try {
+    if (!isConnected) {
+      await connectDB();
+    }
     const categories = await Category.find();
     res.json(categories);
   } catch (error) {
