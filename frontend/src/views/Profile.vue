@@ -1401,6 +1401,9 @@ export default {
   min-height: calc(100vh - 200px);
   background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
   width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .profile-header {
@@ -1477,6 +1480,9 @@ export default {
   display: grid;
   grid-template-columns: 320px 1fr;
   gap: 32px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .profile-sidebar {
@@ -2605,12 +2611,28 @@ textarea.form-input {
 @media (max-width: 968px) {
   .profile-layout {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 20px;
+    width: 100%;
+    max-width: 100%;
   }
 
   .profile-sidebar {
     position: static;
     order: -1;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .profile-card {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .profile-main {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .profile-card {
@@ -2620,11 +2642,15 @@ textarea.form-input {
   .profile-nav {
     flex-direction: row;
     overflow-x: auto;
+    overflow-y: hidden;
     padding: 6px;
     gap: 6px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     margin-top: 16px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .profile-nav::-webkit-scrollbar {
@@ -2668,12 +2694,22 @@ textarea.form-input {
   }
 
   .container {
-    padding: 0 16px;
+    padding: 0 12px;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .profile-page {
+    padding: 20px 0 32px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   .profile-header {
-    margin-bottom: 24px;
-    padding: 20px 16px;
+    margin-bottom: 20px;
+    padding: 16px 0;
   }
 
   .header-content h1 {
@@ -2922,6 +2958,35 @@ textarea.form-input {
   .profile-section {
     padding: 20px 16px;
     border-radius: 12px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .profile-form {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .form-row {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .form-group {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .section-header {
@@ -3097,6 +3162,15 @@ textarea.form-input {
 
   .container {
     padding: 0 10px;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .profile-page {
+    padding: 12px 0 20px;
+    width: 100%;
+    max-width: 100%;
   }
 
   .profile-header {
