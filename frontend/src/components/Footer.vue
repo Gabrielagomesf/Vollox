@@ -18,6 +18,17 @@
             <router-link to="/" class="footer-link">Início</router-link>
             <router-link to="/products" class="footer-link">Produtos</router-link>
             <router-link to="/cart" class="footer-link">Carrinho</router-link>
+            <router-link to="/faq" class="footer-link">FAQ</router-link>
+            <router-link to="/contact" class="footer-link">Contato</router-link>
+          </nav>
+        </div>
+
+        <div class="footer-section">
+          <h4 class="footer-title">Segurança</h4>
+          <nav class="footer-nav">
+            <router-link to="/privacy" class="footer-link">Política de Privacidade</router-link>
+            <a href="#" class="footer-link">Termos de Uso</a>
+            <a href="#" class="footer-link">LGPD</a>
           </nav>
         </div>
 
@@ -67,7 +78,7 @@
 
 .footer-content {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 48px;
   margin-bottom: 40px;
   padding-bottom: 40px;
@@ -205,6 +216,12 @@
 
   .footer-section:first-child {
     grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 1200px) {
+  .footer-content {
+    grid-template-columns: 2fr 1fr 1fr;
   }
 }
 
