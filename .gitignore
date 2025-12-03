@@ -13,3 +13,11 @@ backend/node_modules/
 backend/.env
 backend/*.log
 
+api/node_modules/
+api/.env
+api/.env.local
+
+.vercel
+frontend/.vercel
+frontend/.env.local
+
