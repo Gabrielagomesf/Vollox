@@ -1412,25 +1412,25 @@ export default {
 
 @media (max-width: 768px) {
   .header-promo {
-    font-size: 9px;
-    padding: 5px 0;
+    font-size: 10px;
+    padding: 6px 0;
   }
 
   .promo-content {
     gap: 6px;
-    padding: 0 8px;
+    padding: 0 12px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .promo-text {
-    font-size: 9px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    flex: 1;
+    font-size: 10px;
+    text-align: center;
+    line-height: 1.4;
   }
 
   .promo-icon {
-    font-size: 12px;
+    font-size: 14px;
     flex-shrink: 0;
   }
 
@@ -1439,38 +1439,45 @@ export default {
   }
 
   .header-content {
-    padding: 10px 16px;
-    min-height: 60px;
-    gap: 10px;
+    padding: 12px 16px;
+    min-height: 64px;
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+
+  .logo {
+    flex-shrink: 0;
+    min-width: 0;
   }
 
   .logo-wrapper {
-    gap: 6px;
+    gap: 8px;
   }
 
   .logo-icon-wrapper {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     flex-shrink: 0;
   }
 
   .logo-icon {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .logo-text {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .logo-tagline {
-    font-size: 8px;
-    display: none;
+    font-size: 9px;
+    display: block;
   }
 
   .header-right {
     gap: 6px;
     flex-wrap: nowrap;
     min-width: 0;
+    flex-shrink: 0;
   }
 
   .search-container {
@@ -1487,7 +1494,7 @@ export default {
   }
 
   .auth-link {
-    padding: 6px 10px;
+    padding: 8px 12px;
     min-width: auto;
   }
 
@@ -1496,7 +1503,7 @@ export default {
   }
 
   .action-icon {
-    font-size: 16px;
+    font-size: 18px;
     margin: 0;
   }
 
@@ -1505,12 +1512,111 @@ export default {
   }
 
   .cart-link {
-    padding: 6px 10px;
+    padding: 8px 12px;
     min-width: auto;
   }
 
   .cart-link .cart-info {
     display: none;
+  }
+
+  .cart-icon {
+    font-size: 20px;
+  }
+
+  .cart-badge {
+    min-width: 18px;
+    height: 18px;
+    font-size: 10px;
+    top: -2px;
+    right: -2px;
+    padding: 0 4px;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .mobile-menu-overlay {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: block;
+    max-width: 85%;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-promo {
+    font-size: 9px;
+    padding: 5px 0;
+  }
+
+  .promo-content {
+    gap: 5px;
+    padding: 0 10px;
+    flex-wrap: wrap;
+  }
+
+  .promo-text {
+    font-size: 9px;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  .promo-icon {
+    font-size: 12px;
+  }
+
+  .header-content {
+    gap: 6px;
+    padding: 10px 12px;
+    min-height: 60px;
+  }
+
+  .logo-wrapper {
+    gap: 6px;
+  }
+
+  .logo-icon-wrapper {
+    width: 32px;
+    height: 32px;
+  }
+
+  .logo-icon {
+    font-size: 18px;
+  }
+
+  .logo-text {
+    font-size: 16px;
+  }
+
+  .logo-tagline {
+    font-size: 8px;
+    display: none;
+  }
+
+  .header-right {
+    gap: 4px;
+  }
+
+  .auth-link {
+    padding: 6px 10px;
+  }
+
+  .action-icon {
+    font-size: 16px;
+  }
+
+  .cart-link {
+    padding: 6px 10px;
   }
 
   .cart-icon {
@@ -1527,100 +1633,9 @@ export default {
   }
 
   .mobile-menu-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 36px;
     height: 36px;
     font-size: 18px;
-    flex-shrink: 0;
-  }
-
-  .mobile-menu-overlay {
-    display: block;
-  }
-
-  .mobile-menu {
-    display: block;
-    max-width: 85%;
-  }
-}
-
-@media (max-width: 640px) {
-  .header-promo {
-    font-size: 8px;
-    padding: 4px 0;
-  }
-
-  .promo-content {
-    gap: 4px;
-    padding: 0 8px;
-  }
-
-  .promo-text {
-    font-size: 8px;
-  }
-
-  .promo-icon {
-    font-size: 10px;
-  }
-
-  .header-content {
-    gap: 6px;
-    padding: 8px 12px;
-    min-height: 56px;
-  }
-
-  .logo-wrapper {
-    gap: 4px;
-  }
-
-  .logo-icon-wrapper {
-    width: 28px;
-    height: 28px;
-  }
-
-  .logo-icon {
-    font-size: 16px;
-  }
-
-  .logo-text {
-    font-size: 14px;
-  }
-
-  .header-right {
-    gap: 4px;
-  }
-
-  .auth-link {
-    padding: 5px 8px;
-  }
-
-  .action-icon {
-    font-size: 14px;
-  }
-
-  .cart-link {
-    padding: 5px 8px;
-  }
-
-  .cart-icon {
-    font-size: 16px;
-  }
-
-  .cart-badge {
-    min-width: 14px;
-    height: 14px;
-    font-size: 8px;
-    top: -1px;
-    right: -1px;
-    padding: 0 3px;
-  }
-
-  .mobile-menu-btn {
-    width: 32px;
-    height: 32px;
-    font-size: 16px;
   }
 
   .mobile-menu {
@@ -1640,9 +1655,9 @@ export default {
   }
 
   .mobile-user-avatar {
-    width: 44px;
-    height: 44px;
-    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
   }
 
   .mobile-user-name {
@@ -1654,45 +1669,95 @@ export default {
   }
 
   .mobile-auth-btn {
-    padding: 12px 14px;
-    font-size: 13px;
+    padding: 12px 16px;
+    font-size: 14px;
   }
 
   .mobile-menu-content {
     padding: 12px;
-    gap: 6px;
+    gap: 8px;
   }
 
   .mobile-nav-link,
   .mobile-cart-link,
   .mobile-action-item {
-    padding: 12px 14px;
-    font-size: 14px;
+    padding: 14px 16px;
+    font-size: 15px;
   }
 
   .mobile-nav-icon {
-    font-size: 18px;
-    width: 20px;
+    font-size: 20px;
+    width: 24px;
   }
 
   .mobile-category-header {
-    padding: 12px 14px;
-    font-size: 14px;
+    padding: 14px 16px;
+    font-size: 15px;
   }
 
   .mobile-category-item {
-    padding: 10px 14px;
-    font-size: 13px;
+    padding: 12px 16px;
+    font-size: 14px;
   }
 
   .mobile-category-icon {
-    font-size: 18px;
-    width: 20px;
+    font-size: 20px;
+    width: 24px;
   }
 
   .mobile-logout-btn {
-    padding: 12px 14px;
-    font-size: 13px;
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-promo {
+    font-size: 8px;
+    padding: 4px 0;
+  }
+
+  .promo-text {
+    font-size: 8px;
+  }
+
+  .header-content {
+    padding: 8px 10px;
+    min-height: 56px;
+    gap: 4px;
+  }
+
+  .logo-icon-wrapper {
+    width: 28px;
+    height: 28px;
+  }
+
+  .logo-icon {
+    font-size: 16px;
+  }
+
+  .logo-text {
+    font-size: 14px;
+  }
+
+  .auth-link,
+  .cart-link {
+    padding: 6px 8px;
+  }
+
+  .action-icon,
+  .cart-icon {
+    font-size: 16px;
+  }
+
+  .mobile-menu-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .mobile-menu {
+    max-width: 95%;
   }
 }
 </style>
