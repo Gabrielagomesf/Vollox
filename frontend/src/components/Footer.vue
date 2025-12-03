@@ -27,8 +27,8 @@
           <h4 class="footer-title">Segurança</h4>
           <nav class="footer-nav">
             <router-link to="/privacy" class="footer-link">Política de Privacidade</router-link>
-            <a href="#" class="footer-link">Termos de Uso</a>
-            <a href="#" class="footer-link">LGPD</a>
+            <router-link to="/faq" class="footer-link">FAQ</router-link>
+            <router-link to="/contact" class="footer-link">Contato</router-link>
           </nav>
         </div>
 
