@@ -129,8 +129,11 @@ export default {
           form.value.email,
           form.value.password
         )
+        window.dispatchEvent(new Event('auth-changed'))
         showToast('Conta criada com sucesso!', 'success')
-        router.push('/')
+        setTimeout(() => {
+          router.push('/')
+        }, 100)
       } catch (error) {
         const message = error.response?.data?.error || 'Erro ao criar conta'
         showToast(message, 'error')

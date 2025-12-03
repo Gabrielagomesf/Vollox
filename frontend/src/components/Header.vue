@@ -280,14 +280,26 @@ export default {
     const showUserMenu = ref(false)
     const categories = ref([])
 
-    const isAuthenticated = computed(() => authService.isAuthenticated())
-    const user = computed(() => authService.getCurrentUser())
+    const authState = ref({
+      isAuthenticated: authService.isAuthenticated(),
+      user: authService.getCurrentUser()
+    })
+
+    const isAuthenticated = computed(() => authState.value.isAuthenticated)
+    const user = computed(() => authState.value.user)
     const userName = computed(() => {
       return user.value ? user.value.name.split(' ')[0] : ''
     })
     const userEmail = computed(() => {
       return user.value ? user.value.email : ''
     })
+
+    const updateAuthState = () => {
+      authState.value = {
+        isAuthenticated: authService.isAuthenticated(),
+        user: authService.getCurrentUser()
+      }
+    }
 
     const loadCartCount = async () => {
       try {
@@ -318,6 +330,8 @@ export default {
 
     const handleLogout = () => {
       authService.logout()
+      updateAuthState()
+      window.dispatchEvent(new Event('auth-changed'))
       showToast('Logout realizado com sucesso', 'success')
       router.push('/')
       showMobileMenu.value = false
@@ -340,6 +354,30 @@ export default {
       loadCategories()
       const interval = setInterval(loadCartCount, 3000)
       onUnmounted(() => clearInterval(interval))
+
+      const handleStorageChange = (e) => {
+        if (e.key === 'token' || e.key === 'user') {
+          updateAuthState()
+        }
+      }
+
+      window.addEventListener('storage', handleStorageChange)
+      window.addEventListener('auth-changed', updateAuthState)
+      
+      const checkAuthInterval = setInterval(() => {
+        const currentAuth = authService.isAuthenticated()
+        const currentUser = authService.getCurrentUser()
+        if (currentAuth !== authState.value.isAuthenticated || 
+            JSON.stringify(currentUser) !== JSON.stringify(authState.value.user)) {
+          updateAuthState()
+        }
+      }, 500)
+
+      onUnmounted(() => {
+        window.removeEventListener('storage', handleStorageChange)
+        window.removeEventListener('auth-changed', updateAuthState)
+        clearInterval(checkAuthInterval)
+      })
     })
 
     return {

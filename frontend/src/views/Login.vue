@@ -73,8 +73,11 @@ export default {
       loading.value = true
       try {
         await authService.login(form.value.email, form.value.password)
+        window.dispatchEvent(new Event('auth-changed'))
         showToast('Login realizado com sucesso!', 'success')
-        router.push('/')
+        setTimeout(() => {
+          router.push('/')
+        }, 100)
       } catch (error) {
         const message = error.response?.data?.error || 'Erro ao fazer login'
         showToast(message, 'error')
