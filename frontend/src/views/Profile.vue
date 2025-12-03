@@ -1513,6 +1513,8 @@ export default {
   position: relative;
   display: inline-block;
   margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .profile-avatar {
@@ -1654,6 +1656,7 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  margin-top: 20px;
 }
 
 .nav-item {
@@ -2617,10 +2620,11 @@ textarea.form-input {
   .profile-nav {
     flex-direction: row;
     overflow-x: auto;
-    padding: 8px;
-    gap: 8px;
+    padding: 6px;
+    gap: 6px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    margin-top: 16px;
   }
 
   .profile-nav::-webkit-scrollbar {
@@ -2630,9 +2634,14 @@ textarea.form-input {
   .nav-item {
     white-space: nowrap;
     flex-shrink: 0;
-    min-width: 120px;
-    padding: 12px 16px;
-    font-size: 13px;
+    min-width: 110px;
+    padding: 10px 14px;
+    font-size: 12px;
+    justify-content: center;
+  }
+
+  .nav-icon {
+    font-size: 16px;
   }
 
   .nav-icon {
