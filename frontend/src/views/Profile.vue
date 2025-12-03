@@ -2602,6 +2602,7 @@ textarea.form-input {
 @media (max-width: 968px) {
   .profile-layout {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   .profile-sidebar {
@@ -2609,20 +2610,38 @@ textarea.form-input {
     order: -1;
   }
 
+  .profile-card {
+    padding: 24px;
+  }
+
   .profile-nav {
     flex-direction: row;
     overflow-x: auto;
     padding: 8px;
+    gap: 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .profile-nav::-webkit-scrollbar {
+    display: none;
   }
 
   .nav-item {
     white-space: nowrap;
     flex-shrink: 0;
-    min-width: 140px;
+    min-width: 120px;
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+
+  .nav-icon {
+    font-size: 18px;
   }
 
   .form-row {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .supplier-stats {
@@ -2634,17 +2653,64 @@ textarea.form-input {
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .profile-page {
     padding: 20px 0 40px;
   }
 
+  .container {
+    padding: 0 16px;
+  }
+
   .profile-header {
     margin-bottom: 24px;
+    padding: 20px 16px;
   }
 
   .header-content h1 {
-    font-size: 28px;
+    font-size: 32px;
+  }
+
+  .header-content p {
+    font-size: 14px;
+  }
+
+  .profile-card {
+    padding: 20px;
+  }
+
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+    font-size: 32px;
+  }
+
+  .profile-name {
+    font-size: 20px;
+  }
+
+  .profile-email {
+    font-size: 13px;
+  }
+
+  .profile-stats {
+    padding: 16px;
+  }
+
+  .stat-item {
+    gap: 12px;
+  }
+
+  .stat-icon {
+    font-size: 20px;
+  }
+
+  .stat-value {
+    font-size: 18px;
+  }
+
+  .stat-label {
+    font-size: 11px;
   }
 
   .profile-section {
@@ -2661,19 +2727,433 @@ textarea.form-input {
     font-size: 20px;
   }
 
+  .edit-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  .address-card {
+    padding: 20px;
+  }
+
+  .address-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .address-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
   .order-header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 12px;
   }
 
   .order-footer {
     flex-direction: column;
     align-items: stretch;
+    gap: 12px;
   }
 
   .order-footer .btn-outline {
     width: 100%;
     text-align: center;
+  }
+
+  .order-total {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .supplier-registration {
+    gap: 24px;
+  }
+
+  .info-card {
+    padding: 20px;
+  }
+
+  .info-card h3 {
+    font-size: 18px;
+  }
+
+  .info-card p {
+    font-size: 14px;
+  }
+
+  .banking-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .pix-keys-list {
+    gap: 16px;
+  }
+
+  .pix-key-item {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .profile-page {
+    padding: 16px 0 32px;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+
+  .profile-header {
+    margin-bottom: 20px;
+    padding: 16px 12px;
+    border-radius: 12px;
+  }
+
+  .header-content h1 {
+    font-size: 28px;
+  }
+
+  .header-content p {
+    font-size: 13px;
+  }
+
+  .profile-card {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .profile-avatar-wrapper {
+    margin-bottom: 16px;
+  }
+
+  .profile-avatar {
+    width: 70px;
+    height: 70px;
+    font-size: 28px;
+  }
+
+  .profile-name {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  .profile-email {
+    font-size: 12px;
+  }
+
+  .supplier-badge {
+    padding: 8px 14px;
+    font-size: 12px;
+    margin-top: 12px;
+  }
+
+  .profile-stats {
+    padding: 12px;
+    margin-top: 16px;
+  }
+
+  .stat-item {
+    gap: 10px;
+  }
+
+  .stat-icon {
+    font-size: 18px;
+  }
+
+  .stat-value {
+    font-size: 16px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+  }
+
+  .profile-nav {
+    padding: 6px;
+    gap: 6px;
+  }
+
+  .nav-item {
+    min-width: 100px;
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+
+  .nav-icon {
+    font-size: 16px;
+  }
+
+  .profile-section {
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+
+  .section-header {
+    margin-bottom: 20px;
+  }
+
+  .section-header h2 {
+    font-size: 18px;
+  }
+
+  .section-icon {
+    font-size: 20px;
+  }
+
+  .edit-btn {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .form-group {
+    margin-bottom: 18px;
+  }
+
+  .form-group label {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  .label-icon {
+    font-size: 14px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 13px;
+    padding: 10px 12px;
+    border-radius: 8px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+
+  .address-card {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .address-header h3 {
+    font-size: 16px;
+  }
+
+  .address-content p {
+    font-size: 13px;
+  }
+
+  .address-actions {
+    gap: 8px;
+  }
+
+  .action-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .order-card {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .order-info h3 {
+    font-size: 16px;
+  }
+
+  .order-date {
+    font-size: 12px;
+  }
+
+  .order-status {
+    padding: 5px 12px;
+    font-size: 11px;
+  }
+
+  .order-item {
+    gap: 10px;
+  }
+
+  .order-item-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .order-item-info h4 {
+    font-size: 13px;
+  }
+
+  .order-item-info p {
+    font-size: 11px;
+  }
+
+  .order-item-total {
+    font-size: 14px;
+  }
+
+  .order-total {
+    font-size: 16px;
+  }
+
+  .total-value {
+    font-size: 20px;
+  }
+
+  .btn-outline {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .supplier-registration {
+    gap: 20px;
+  }
+
+  .info-card {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .info-card h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .info-card p {
+    font-size: 13px;
+  }
+
+  .banking-form-row {
+    gap: 16px;
+  }
+
+  .pix-keys-list {
+    gap: 12px;
+  }
+
+  .pix-key-item {
+    padding: 14px;
+    border-radius: 10px;
+  }
+
+  .pix-key-header {
+    margin-bottom: 12px;
+  }
+
+  .pix-key-header h4 {
+    font-size: 14px;
+  }
+
+  .remove-pix-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-page {
+    padding: 12px 0 24px;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .profile-header {
+    padding: 14px 10px;
+  }
+
+  .header-content h1 {
+    font-size: 24px;
+  }
+
+  .header-content p {
+    font-size: 12px;
+  }
+
+  .profile-card {
+    padding: 14px;
+  }
+
+  .profile-avatar {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+
+  .profile-name {
+    font-size: 16px;
+  }
+
+  .profile-email {
+    font-size: 11px;
+  }
+
+  .profile-nav {
+    padding: 4px;
+    gap: 4px;
+  }
+
+  .nav-item {
+    min-width: 90px;
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+
+  .nav-icon {
+    font-size: 14px;
+  }
+
+  .profile-section {
+    padding: 16px 12px;
+  }
+
+  .section-header h2 {
+    font-size: 16px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 12px;
+    padding: 9px 11px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 11px;
+    font-size: 13px;
   }
 }
 </style>
